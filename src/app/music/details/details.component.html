@@ -1,1 +1,79 @@
-<p>details works!</p>
+<div class="container mx-auto">
+    <h2 class="text-2xl font-semibold leading-7 text-gray-900 text-center">Detalhes da Música</h2>
+  
+    <div *ngIf="music && !isEditing" class="bg-white shadow-md rounded-lg p-6 my-6">
+      <p><strong>Cantor:</strong> {{ music.singer }}</p>
+      <p><strong>Música:</strong> {{ music.song }}</p>
+      <p><strong>Gênero:</strong> {{ music.genre }}</p>
+      <p><strong>Data de Registro:</strong> {{ music.registrationDate | date: 'yyyy-MM-dd':'UTC' }}</p>
+  
+        <!-- Botão para editar -->
+        <button class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 mt-4" (click)="toggleEdit()">
+            Editar
+        </button>
+        <!-- Botão para voltar à lista de músicas -->
+        <button class="bg-gray-500 text-white p-2 rounded-md hover:bg-gray-600 mt-4" (click)="goBackToList()">
+            Voltar para a Lista
+        </button>
+    </div>
+    
+    <!-- Formulário de edição -->
+    <div *ngIf="isEditing" class="border-b border-gray-900/10 pb-12">
+      <h3 class="text-2xl font-semibold leading-7 text-gray-900 text-center">Editar Música</h3>
+      <form [formGroup]="musicForm" (ngSubmit)="updateMusic()" class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+        
+        <!-- Cantor -->
+        <div class="sm:col-span-3">
+          <label for="singer" class="block text-sm font-medium leading-6 text-gray-900">Cantor</label>
+          <div class="mt-2">
+            <input
+              type="text"
+              id="singer"
+              formControlName="singer"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="Digite o nome do cantor"
+            />
+          </div>
+        </div>
+  
+        <!-- Música -->
+        <div class="sm:col-span-3">
+          <label for="song" class="block text-sm font-medium leading-6 text-gray-900">Música</label>
+          <div class="mt-2">
+            <input
+              type="text"
+              id="song"
+              formControlName="song"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="Digite o nome da música"
+            />
+          </div>
+        </div>
+  
+        <!-- Gênero -->
+        <div class="sm:col-span-3">
+          <label for="genre" class="block text-sm font-medium leading-6 text-gray-900">Estilo Musical</label>
+          <div class="mt-2">
+            <input
+              type="text"
+              id="genre"
+              formControlName="genre"
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              placeholder="Digite o estilo musical"
+            />
+          </div>
+        </div>
+  
+        <!-- Botão de Enviar -->
+        <div class="sm:col-span-6">
+          <button
+            type="submit"
+            class="w-full bg-indigo-600 text-white font-medium p-2 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-600 focus:ring-inset"
+          >
+            Editar Música
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
