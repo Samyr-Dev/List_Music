@@ -1,7 +1,7 @@
 <div class="container mx-auto">
     <h2 class="text-2xl font-semibold leading-7 text-gray-900 text-center">Detalhes da Música</h2>
   
-    <div *ngIf="music && !isEditing" class="bg-white shadow-md rounded-lg p-6 my-6">
+    <div *ngIf="music && !isEditing" class="bg-white shadow-md rounded-lg p-6 my-6 text-center">
       <p><strong>Cantor:</strong> {{ music.singer }}</p>
       <p><strong>Música:</strong> {{ music.song }}</p>
       <p><strong>Gênero:</strong> {{ music.genre }}</p>
@@ -12,7 +12,7 @@
             Editar
         </button>
         <!-- Botão para voltar à lista de músicas -->
-        <button class="bg-gray-500 text-white p-2 rounded-md hover:bg-gray-600 mt-4" (click)="goBackToList()">
+        <button class="bg-black text-white p-2 rounded-md hover:bg-gray-600 mt-4" (click)="goBackToList()">
             Voltar para a Lista
         </button>
     </div>
@@ -30,6 +30,7 @@
               type="text"
               id="singer"
               formControlName="singer"
+              maxlength="50"
               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               placeholder="Digite o nome do cantor"
             />
@@ -44,6 +45,7 @@
               type="text"
               id="song"
               formControlName="song"
+              maxlength="100"
               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               placeholder="Digite o nome da música"
             />
@@ -58,6 +60,7 @@
               type="text"
               id="genre"
               formControlName="genre"
+              maxlength="30"
               class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               placeholder="Digite o estilo musical"
             />

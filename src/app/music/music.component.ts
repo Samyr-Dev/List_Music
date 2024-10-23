@@ -6,7 +6,7 @@ import { MatTableModule } from '@angular/material/table';
 @Component({
   selector: 'app-music',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, MatTableModule],
+  imports: [RouterOutlet, ReactiveFormsModule, MatTableModule,],
   templateUrl: './music.component.html',
   styleUrls: ['./music.component.css']
 })
