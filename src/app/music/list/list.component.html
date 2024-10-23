@@ -15,19 +15,24 @@
   </div>
 
   <!-- Exibição em Cards -->
-  <div *ngIf="viewMode === 'cards'" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div *ngIf="viewMode === 'cards'" class="flex justify-center sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <div *ngFor="let music of musicList" class="bg-white shadow-md rounded-lg p-6">
       <h3 class="text-lg font-bold">{{ music.singer }}</h3>
       <p><strong>Música:</strong> {{ music.song }}</p>
       <p><strong>Gênero:</strong> {{ music.genre }}</p>
       <p><strong>Data_Registro:</strong> {{ music.registrationDate | date: 'yyyy-MM-dd':'UTC' }}</p>
-       <!-- Botão para ver detalhes -->
-      <button class="bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-600" (click)="viewDetails(music._id)">
+      <!-- Botão para ver detalhes -->
+      <button 
+        *ngIf="music._id" 
+        class="bg-indigo-500 text-white p-2 rounded-md hover:bg-indigo-600" 
+        (click)="viewDetails(music._id)">
         Detalhes
       </button>
       <!-- Botão de exclusão -->
-      <button class="bg-red-500 text-white p-2 rounded-md mt-4 hover:bg-red-600"
-              (click)="confirmDelete(music._id)">
+      <button 
+        *ngIf="music._id" 
+        class="bg-red-500 text-white p-2 rounded-md mt-4 hover:bg-red-600" 
+        (click)="confirmDelete(music._id)">
         Excluir
       </button>
     </div>
