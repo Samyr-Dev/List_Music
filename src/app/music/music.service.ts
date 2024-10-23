@@ -36,6 +36,7 @@ export class MusicService {
   }
 }
 
+
 // Defina a interface Music conforme necessário
 export interface Music {
   _id?: string;
