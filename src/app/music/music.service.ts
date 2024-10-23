@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MusicService {
-  private apiUrl = 'http://localhost:5000/api/music'; 
+  private apiUrl = 'https://backend-music-hazel.vercel.app/'; 
 
   constructor(private http: HttpClient) { }
 
