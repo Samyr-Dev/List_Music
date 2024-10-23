@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MusicService {
-  private apiUrl = 'https://backend-music-hazel.vercel.app/'; 
+  private apiUrl = 'https://backend-music1.onrender.com/'; 
 
   constructor(private http: HttpClient) { }
 
