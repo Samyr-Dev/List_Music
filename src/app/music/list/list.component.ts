@@ -21,6 +21,7 @@ export class ListComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private musicService: MusicService, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
+    console.log('ListComponent inicializado');
     this.fetchMusic();
   }
   
