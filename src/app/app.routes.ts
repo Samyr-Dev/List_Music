@@ -11,11 +11,7 @@ export const routes: Routes = [
         pathMatch: 'full',
     },
     {
-        path: 'list',
-        component: ListComponent,
-    },
-    {
-        path: '',
+        path: 'music',
         component: MusicComponent,
         children: [
             {
@@ -31,5 +27,10 @@ export const routes: Routes = [
                 component: ListComponent,
             }
         ]
+    },
+    // Se você quiser acessar a lista diretamente na raiz
+    {
+        path: 'list',
+        component: ListComponent,
     }
 ];
