@@ -19,7 +19,7 @@ export class MusicService {
   };
   // GET: Listar todas as músicas
   getMusics(): Observable<Music[]> {
-    console.log('Fazendo requisição GET para:', this.apiUrl);
+    const url = `${this.apiUrl}?_=${new Date().getTime()}`;
     return this.http.get<Music[]>(this.apiUrl, this.httpOptions).pipe(
       tap(response => {
         console.log('Resposta da API:', response);
