@@ -12,7 +12,7 @@ export const routes: Routes = [
     },
     {
         path: 'list',
-        component: ListComponent
+        component: ListComponent,
     },
     {
         path: '',
