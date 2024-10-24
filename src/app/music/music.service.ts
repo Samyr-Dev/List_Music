@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, Observable, tap, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class MusicService {
 
   private httpOptions = {
     headers: new HttpHeaders({
-      'Cache-Control': 'no-cache',
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
       'Pragma': 'no-cache',
       'Expires': '0'
     })
@@ -20,15 +20,7 @@ export class MusicService {
   // GET: Listar todas as músicas
   getMusics(): Observable<Music[]> {
     const url = `${this.apiUrl}?_=${new Date().getTime()}`;
-    return this.http.get<Music[]>(this.apiUrl, this.httpOptions).pipe(
-      tap(response => {
-        console.log('Resposta da API:', response);
-      }),
-      catchError(error => {
-        console.error('Erro na requisição GET:', error);
-        return throwError(error);
-      })
-    );
+    return this.http.get<Music[]>(this.apiUrl, this.httpOptions)
   }
 
   // POST: Criar uma nova música
