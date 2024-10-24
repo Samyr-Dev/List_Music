@@ -26,6 +26,7 @@ export class ListComponent implements OnInit {
   }
   
   fetchMusic(): void {
+    console.log('Iniciando a busca de músicas...');
     this.musicService.getMusics().subscribe({
       next: (data) => {
         this.musicList = data;

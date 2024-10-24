@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,16 @@ export class MusicService {
 
   // GET: Listar todas as músicas
   getMusics(): Observable<Music[]> {
-    return this.http.get<Music[]>(this.apiUrl);
+    console.log('Fazendo requisição GET para:', this.apiUrl);
+    return this.http.get<Music[]>(this.apiUrl).pipe(
+      tap(response => {
+        console.log('Resposta da API:', response);
+      }),
+      catchError(error => {
+        console.error('Erro na requisição GET:', error);
+        return throwError(error);
+      })
+    );
   }
 
   // POST: Criar uma nova música
