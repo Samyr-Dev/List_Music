@@ -11,7 +11,7 @@ export const routes: Routes = [
         pathMatch: 'full',
     },
     {
-        path: 'music',
+        path: '',
         component: MusicComponent,
         children: [
             {
