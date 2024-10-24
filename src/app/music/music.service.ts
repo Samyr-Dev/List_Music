@@ -6,7 +6,7 @@ import { catchError, Observable, tap, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class MusicService {
-  private apiUrl = 'https://backend-music1.onrender.com/api/music'; 
+  private apiUrl = 'https://backend-music-wy56.onrender.com/api/music'; 
 
   constructor(private http: HttpClient) { }
 
