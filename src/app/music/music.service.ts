@@ -2,6 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+export interface Music {
+  _id?: string;
+  singer: string;
+  song: string;
+  genre: string;
+  registrationDate: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -46,10 +54,3 @@ export class MusicService {
 
 
 // Defina a interface Music conforme necessário
-export interface Music {
-  _id?: string;
-  singer: string;
-  song: string;
-  genre: string;
-  registrationDate: string;
-}
