@@ -10,7 +10,10 @@ export const routes: Routes = [
         redirectTo: 'list',
         pathMatch: 'full',
     },
-    
+    {
+        path: 'list',
+        component: ListComponent
+    },
     {
         path: '',
         component: MusicComponent,
