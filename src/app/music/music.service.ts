@@ -27,9 +27,10 @@ export class MusicService {
   };
   // GET: Listar todas as músicas
   getMusics(): Observable<Music[]> {
-    const url = `${this.apiUrl}?_=${new Date().getTime()}`;
-    return this.http.get<Music[]>(this.apiUrl, this.httpOptions)
-  }
+    const url = `${this.apiUrl}?_=${new Date().getTime()}`; // Adicionando um parâmetro de cache-busting
+    return this.http.get<Music[]>(url, this.httpOptions); 
+}
+
 
   // POST: Criar uma nova música
   createMusic(music: Music): Observable<Music> {
