@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Music {
-  _id?: string;
+  _id: string;
   singer: string;
   song: string;
   genre: string;
@@ -27,10 +27,9 @@ export class MusicService {
   };
   // GET: Listar todas as músicas
   getMusics(): Observable<Music[]> {
-    const url = `${this.apiUrl}?_=${new Date().getTime()}`; // Adicionando um parâmetro de cache-busting
+    const url = `${this.apiUrl}?_=${new Date().getTime()}`; //parâmetro de cache-busting que corrigiu erro de requisição apos deploy
     return this.http.get<Music[]>(url, this.httpOptions); 
 }
-
 
   // POST: Criar uma nova música
   createMusic(music: Music): Observable<Music> {
@@ -52,6 +51,3 @@ export class MusicService {
     return this.http.delete(`${this.apiUrl}/${id}`, this.httpOptions);
   }
 }
-
-
-// Defina a interface Music conforme necessário
