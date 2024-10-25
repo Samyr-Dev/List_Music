@@ -5,11 +5,12 @@ import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Music, MusicService } from '../music.service'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CommonModule, MatTableModule],
+  imports: [CommonModule, MatTableModule, MatCardModule],
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })

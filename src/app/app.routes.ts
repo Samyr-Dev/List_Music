@@ -28,7 +28,7 @@ export const routes: Routes = [
             }
         ]
     },
-    // Se você quiser acessar a lista diretamente na raiz
+   
     {
         path: 'list',
         component: ListComponent,
