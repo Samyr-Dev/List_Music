@@ -24,7 +24,7 @@
         singer: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
         song: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
         genre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
-        registrationDate: ['', Validators.required], 
+        registrationDate: ['',], 
       });
     }
 
@@ -44,8 +44,9 @@
           },
           error: (error) => {
             console.error('Erro ao cadastrar a música:', error);
-            this.snackBar.open('Erro ao cadastrar a música. Tente novamente.', 'Fechar', {
-              duration: 3000,
+            
+            this.snackBar.open(error.error?.error , 'Fechar',{
+              duration: 5000,
               horizontalPosition: 'center',
               verticalPosition: 'top',
             });

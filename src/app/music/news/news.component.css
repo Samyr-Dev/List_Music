@@ -1,0 +1,9 @@
+
+/*
+IMPLEMENTAÇÃO DO CSS PARA AJUSTE DO COMPONENTE DE NOTÍCIAS, PARA MELHORAR A APRESENTAÇÃO VISUAL E A EXPERIÊNCIA DO USUÁRIO.
+*/
+
+#singer, #song, #genre, #registrationDate {
+  width: 100%;
+  padding: 10px;
+}

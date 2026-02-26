@@ -14,8 +14,8 @@ export interface Music {
   providedIn: 'root'
 })
 export class MusicService {
-  private apiUrl = 'https://backend-music-mamn.onrender.com/api/music'; 
-
+  // private apiUrl = 'https://backend-music-mamn.onrender.com/api/music'; 
+  private apiUrl = 'http://localhost:5000/api/music';
   constructor(private http: HttpClient) { }
 
   private httpOptions = {
