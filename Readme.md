@@ -1,6 +1,6 @@
 # List_Music - Frontend de Gerenciamento de Músicas🎵
 
-[![License](https://img.shields.io/github/license/Samyr-Dev/List_Music)](https://github.com/Samyr-Dev/List_Music/blob/main/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Samyr-Dev/List_Music/blob/main/LICENSE)
 [![Angular](https://img.shields.io/badge/Angular-18-DD0031?logo=angular&logoColor=white)](https://angular.dev/)
 
 Este repositório contém a interface web desenvolvida em **Angular 18** para o gerenciamento e listagem de músicas. O projeto é a parte visual de uma aplicação Full Stack, integrada a uma API REST em Node.js com banco de dados MongoDB.
